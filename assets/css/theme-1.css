@@ -13512,4 +13512,11 @@ body {
 
 .config-panel .close .fa {
     color: #fff
+} .dark-mode .card-body p {
+    color: white; 
+}
+
+
+.card-body p {
+    color: black; 
 }
