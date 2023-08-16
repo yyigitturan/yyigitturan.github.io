@@ -1,11 +1,4 @@
-#MIT License
-
-This project is licensed under the terms of the MIT License.
-
-Copyright (c) 2023 yyigitturan.github.io
-
-...
-
+# MIT License
 # Security Policy
 
 ## Supported Versions
