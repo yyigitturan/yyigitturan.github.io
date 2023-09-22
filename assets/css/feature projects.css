@@ -1,0 +1,86 @@
+.featured-project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* İstenilen aralığı ayarlayabilirsiniz */
+}
+
+.featured-project-image {
+    max-width: 1100px; /* Resmin boyutunu istediğiniz gibi ayarlayabilirsiniz */
+    height: auto;
+    margin-right: 20px; /* Resim ile metin arasındaki boşluğu ayarlayabilirsiniz */
+}
+
+.project-info {
+    flex-grow: 1; /* Metin kısmının resim kadar büyümesini sağlar */
+}
+
+.project-title {
+    font-size: 1.5rem; /* Başlık boyutunu istediğiniz gibi ayarlayabilirsiniz */
+    font-weight: bold;
+}
+
+.project-description {
+    font-size: 1rem; /* Açıklama boyutunu istediğiniz gibi ayarlayabilirsiniz */
+}
+
+.image-navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.prev-button,
+.next-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.prev-button {
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Önceki ve Sonraki Butonları */
+.prev-button,
+.next-button {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333; /* Varsayılan buton rengi */
+}
+
+/* Dark tema için butonların arkaplan rengini belirleyin */
+.dark-theme .prev-button,
+.dark-theme .next-button {
+    background-color: #333; /* Dark tema için arkaplan rengi */
+    color: #fff; /* Dark tema için metin rengi */
+}
+
+/* Light tema için butonların arkaplan rengini belirleyin */
+.light-theme .prev-button,
+.light-theme .next-button {
+    background-color: #f5f5f5; /* Light tema için arkaplan rengi */
+    color: #333; /* Light tema için metin rengi */
+}
+
+
+
+/* Projelerin büyük açıklaması için stil */
+.larger-description {
+    font-size: 2.0rem; /* Açıklama yazısının boyutunu ayarlayın */
+}
+
+
