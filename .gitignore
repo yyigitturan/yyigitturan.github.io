@@ -1,5 +1,4 @@
-/resources/
-public/
-.hugo_build.lock
-.DS_Store
-assets/jsconfig.json
+_site
+.sass-cache
+.jekyll-metadata
+Gemfile.lock

@@ -1,0 +1,9 @@
+main:
+  - title: "Presentations"
+    url: /presentations/
+  - title: "Projects"
+    url: /projects/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "Publications"
+    url: /publications/
