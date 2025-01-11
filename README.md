@@ -1,17 +1,17 @@
-# v3
+![cover screenshot](/media/portfolio-screenshot.JPG)
 
-Third iteration of my personal website built with Jekyll.
+# Description
+Portfolio for machine learning/deep learning engineers, who are participating in competitions. Free to use for anybody interested.
+The website is divided into 5 different sections:
+1. Cover section
+2. About-you section 
+3. Competition section where you can list the competitions and your rank
+4. Accomplishments (for certificates)
+5. Get-in-touch section with links to socials
 
-> 📢 **PSA for those who want to fork or copy this repo and use it for their own site:**
->
-> Please be a decent person and give me proper credit by linking back to my website! Refer to this handy [quora post](https://www.quora.com/Is-it-bad-to-copy-other-peoples-code) if you're not sure.
+# Online demo
+https://www.maxschaefer.tech
 
-## Dependencies
-
-- [Gulp](https://gulpjs.com/)
-
-## Getting Started
-
-1.  `gem install jekyll sass bundler jekyll-minifier jekyll-sitemap`
-2.  `npm install`
-3.  `npm start`
+# References
+Neural network animation: https://codepen.io/towc/pen/wGjXGY  
+Inspired by: https://github.com/bchiang7/v4
