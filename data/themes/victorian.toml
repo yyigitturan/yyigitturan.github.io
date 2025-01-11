@@ -1,0 +1,29 @@
+# Theme metadata
+name = "victorian"
+
+[light]
+  # Primary
+  primary = "#ca7558" # For buttons (Meet the team)
+
+  # Menu
+  menu_primary = "#704214" # the logo background color for menu bar
+  menu_text = "#f9e09e" # The text in the menu bar
+  menu_text_active = "#ca7558" # for active section of menu
+  menu_title = "#7f6c34" # don't know what this is doing
+
+  # Links
+  link = "#522602"
+  link_hover = "#ca7558"
+  link_decoration = "underline"
+
+  # Backgrounds
+  background = "#EAE7D6"
+  home_section_odd = "#EAE7D6"
+  home_section_even = "#7f6c34"
+
+# Color choices
+#7f6c34
+#ca7558
+#f9e09e
+#522602
+#53868b
