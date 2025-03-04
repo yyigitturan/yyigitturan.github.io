@@ -1,46 +1,177 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Projects - Yaşar Yiğit Turan</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link href="css/portfolio.css" rel="stylesheet">
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="media/logo.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+        <link rel="manifest" href="media/site.webmanifest">
+
+        <!-- Icons -->
+        <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+        <title>Yaşar Yiğit Turan - Projects</title>
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">Yaşar Yiğit Turan</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-                            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
+        <header id="header" class="fixed-top">
+            <div class="py-2 flex-wrap justify-content-center">
+                <a href="/" id="brand-logo" class="align-items-center mb-3 mb-md-0 me-md-auto text-light text-decoration-none">
+                    <span class="fs-5">Yaşar Yiğit Turan</span>
+                </a>
+                <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+                    aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon3">
+                        <span></span><span></span><span></span>
                     </div>
-                </div>
-            </nav>
+                </button>
+
+                <!-- Navigation for desktop -->
+                <nav id="nav-desktop" class="navbar navbar-dark indigo darken-2">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+                        <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
+                        <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
+                        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
+                        <li class="nav-item"><a id="btn-resume" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" class="btn btn-outline-light" target="_blank"><i class="fas fa-cloud-download-alt"></i>CV</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Navigation for mobile devices -->
+                <nav id="nav-mobile" class="sidenav close">
+                    <ul class="nav nav-pills mb-5">
+                        <li class="nav-item"><a href="about.html" class="nav-link nav-link-m" aria-current="page">About</a></li>
+                        <li class="nav-item"><a href="projects.html" class="nav-link nav-link-m active">Projects</a></li>
+                        <li class="nav-item"><a href="skills.html" class="nav-link nav-link-m">Skills</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link nav-link-m">Contact</a></li>
+                        <li class="nav-item"><a id="btn-resume" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" class="btn btn-outline-light" target="_blank"><i class="fas fa-cloud-download-alt"></i>CV</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
-        <section class="container py-5">
-            <h1 class="text-center">Projects</h1>
-            <ul>
-                <li>Machine Learning Project 1</li>
-                <li>Computer Vision Project 2</li>
-                <li>Data Analysis Project 3</li>
-            </ul>
+        <!-- Projects Section -->
+        <section id="projects" class="bg-primary text-white">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Projects</h2>
+                        <p class="lead">Here are some of the projects I have worked on.</p>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <!-- Project Card 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Sentiment Analysis on Twitter Data</h5>
+                                <p class="card-text">Built a machine learning model to classify tweets as positive, negative, or neutral using Python and NLP techniques.</p>
+                                <p><strong>Technologies:</strong> Python, NLTK, Scikit-learn, TensorFlow</p>
+                                <a href="https://github.com/yyigitturan/sentiment-analysis" class="btn btn-outline-light" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Customer Segmentation with K-Means</h5>
+                                <p class="card-text">Performed customer segmentation using K-Means clustering on a retail dataset to identify distinct customer groups.</p>
+                                <p><strong>Technologies:</strong> Python, Pandas, Scikit-learn, Matplotlib</p>
+                                <a href="https://github.com/yyigitturan/customer-segmentation" class="btn btn-outline-light" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Image Classification with CNN</h5>
+                                <p class="card-text">Developed a Convolutional Neural Network (CNN) to classify images from the CIFAR-10 dataset.</p>
+                                <p><strong>Technologies:</strong> Python, TensorFlow, Keras, OpenCV</p>
+                                <a href="https://github.com/yyigitturan/image-classification" class="btn btn-outline-light" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <!-- Project Card 4 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Predictive Maintenance for Machines</h5>
+                                <p class="card-text">Created a predictive maintenance model to forecast machine failures using sensor data.</p>
+                                <p><strong>Technologies:</strong> Python, Scikit-learn, XGBoost, Pandas</p>
+                                <a href="https://github.com/yyigitturan/predictive-maintenance" class="btn btn-outline-light" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 5 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Stock Price Prediction</h5>
+                                <p class="card-text">Built a time series model to predict stock prices using LSTM neural networks.</p>
+                                <p><strong>Technologies:</strong> Python, TensorFlow, Keras, Pandas</p>
+                                <a href="https://github.com/yyigitturan/stock-price-prediction" class="btn btn-outline-light" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 6 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Chatbot for Customer Support</h5>
+                                <p class="card-text">Developed a chatbot using NLP to handle customer queries and provide automated responses.</p>
+                                <p><strong>Technologies:</strong> Python, TensorFlow, NLTK, Flask</p>
+                                <a href="https://github.com/yyigitturan/chatbot" class="btn btn-outline-light" target="_blank">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <footer class="bg-dark text-white text-center py-4">
-            <p>&copy; 2025 Yaşar Yiğit Turan</p>
+        <!-- Footer -->
+        <footer class="container-cover bg-primary text-center text-white justify-content-center">
+            <!-- links to socials for mobile clients -->
+            <div id="social-bar" class="container text-center">
+                <div class="d-flex justify-content-around">
+                    <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a title="LinkedIn Profile" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a title="GitHub Profile" href="https://github.com/yyigitturan" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a title="Kaggle Profile" href="https://www.kaggle.com/yaaryiitturan" target="_blank">
+                        <i class="fab fa-kaggle"></i>
+                    </a>
+                    <a title="X Profile" href="https://x.com/yigitturan_" target="_blank">
+                        <i class="fab fa-twitter"></i> <!-- X is using the same icon as Twitter -->
+                    </a>
+                </div>
+            </div>
+            <p>&copy; 2025 Yaşar Yiğit Turan.</p>
         </footer>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script src="js/navbar.js"></script>
     </body>
 </html>
