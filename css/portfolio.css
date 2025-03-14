@@ -543,4 +543,62 @@ footer p{
         margin-top:30px;
         width:300px;
     }
+} 
+
+
+
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+} 
+
+#about {
+    width: 100%;
+    max-width: 2800px; /* İçeriği belirli bir genişlikte tutar */
+    margin:  auto; /* İçeriği ortalar */
+    padding: 50px; /* Kenar boşlukları */
+} 
+
+@media (max-width: 768px) {
+    #about {
+        height: auto;
+        padding: 20px;
+    }
+} 
+
+html, body {
+    background-color: #181D26; /* Örnek bir renk (CSS'deki --bg-primary değişkenini kullanabilirsiniz) */
+    width: 100%;
+    height: 100%; /* Sayfanın tam yüksekliğini kaplar */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sayfanın tam yüksekliğini kaplar */
+}
+
+#about {
+    flex: 1; /* İçeriği sayfanın geri kalanına genişletir */
+}
+
+footer {
+    flex-shrink: 0; /* Footer'ın küçülmesini engeller */
+    background-color: var(--bg-primary); /* Footer arka plan rengi */
+    color: white; /* Yazı rengi */
+    text-align: center; /* Yazıyı ortala */
+    padding: 20px 0; /* İç boşluk */
+    width: 100%; /* Genişliği tam ekran yapar */
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 10px 0; /* Mobilde daha küçük kenar boşlukları */
+    }
 }
