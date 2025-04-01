@@ -7,12 +7,15 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <link href="css/portfolio.css" rel="stylesheet">
+        <link href="css/portfolio.css" rel="stylesheet"> <!-- Assuming this file exists -->
 
         <!-- Google Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="media/logo.png">
@@ -23,10 +26,141 @@
         <!-- Icons -->
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
         <title>Yaşar Yiğit Turan - Skills</title>
+
+        <style>
+            /* Define accent color variable */
+            :root {
+                --custom-accent-blue: #3498db; /* Brighter blue for accents */
+            }
+
+            body {
+                overflow-x: hidden;
+                position: relative;
+            }
+
+            #skills {
+                min-height: 100vh;
+                padding-top: 80px;
+                padding-bottom: 60px;
+                position: relative;
+                overflow: visible;
+                 color: #ffffff; /* Default text color on primary background */
+            }
+
+             #header .nav-link.active {
+                 color: var(--custom-accent-blue) !important;
+                 font-weight: bold;
+             }
+             #header #btn-resume {
+                border-color: var(--custom-accent-blue);
+                color: var(--custom-accent-blue);
+             }
+              #header #btn-resume:hover {
+                 background-color: var(--custom-accent-blue);
+                 color: #212529;
+             }
+
+
+            .skill-card {
+                transition: all 0.3s ease;
+                border: none;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                height: 100%;
+                transform: translateY(0);
+                color: #ecf0f1; /* Light text on dark card background */
+            }
+
+            .skill-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            }
+
+            .skill-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: var(--custom-accent-blue);
+            }
+
+            .skill-badge {
+                background-color: var(--custom-accent-blue);
+                color: #ffffff;
+                margin-right: 5px;
+                margin-bottom: 5px;
+                font-weight: 500;
+            }
+
+            .skill-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .section-title {
+                position: relative;
+                display: inline-block;
+                margin-bottom: 30px; /* Adjusted margin after removing subheadings */
+                color: #ffffff;
+            }
+
+            .section-title:after {
+                content: '';
+                position: absolute;
+                width: 70%;
+                height: 3px;
+                background: var(--custom-accent-blue);
+                bottom: -10px;
+                left: 15%;
+            }
+
+            /* Change color for H5 card titles specifically */
+            #skills .skill-card h5.card-title {
+                color: var(--custom-accent-blue); /* Use accent color for card titles */
+            }
+            /* Keep H3 (if any remain elsewhere) default or styled differently */
+            #skills h3 {
+                 color: #ffffff; /* Example default color if H3 were used */
+            }
+
+
+            .text-success-custom {
+                 color: var(--custom-accent-blue) !important;
+            }
+
+            .statistical-software-icon {
+                 color: #ecf0f1;
+                 font-size: 1.8rem;
+            }
+
+             footer {
+                 color: #ffffff;
+             }
+             #social-bar a i {
+                 color: #ffffff;
+                 transition: color 0.3s ease;
+             }
+             #social-bar a:hover i {
+                 color: var(--custom-accent-blue);
+             }
+
+
+            @media (max-width: 768px) {
+                .skill-card {
+                    margin-bottom: 20px;
+                }
+
+                #skills {
+                    padding-top: 70px;
+                }
+                 .section-title {
+                    margin-bottom: 20px; /* Adjust spacing on smaller screens */
+                }
+            }
+        </style>
     </head>
     <body>
         <header id="header" class="fixed-top">
-            <div class="py-2 flex-wrap justify-content-center">
+             <div class="py-2 flex-wrap justify-content-center">
                 <a href="/" id="brand-logo" class="align-items-center mb-3 mb-md-0 me-md-auto text-light text-decoration-none">
                     <span class="fs-5">Yaşar Yiğit Turan</span>
                 </a>
@@ -37,7 +171,6 @@
                     </div>
                 </button>
 
-                <!-- Navigation for desktop -->
                 <nav id="nav-desktop" class="navbar navbar-dark indigo darken-2">
                     <ul class="nav nav-pills">
                         <li class="nav-item"><a href="about.html" class="nav-link" aria-current="page">About</a></li>
@@ -45,12 +178,10 @@
                         <li class="nav-item"><a href="skills.html" class="nav-link active">Skills</a></li>
                         <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-
-                        <li class="nav-item"><a id="btn-resume" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" class="btn btn-outline-light" target="_blank"><i class="fas fa-cloud-download-alt"></i>CV</a></li>
+                        <li class="nav-item"><a id="btn-resume" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" class="btn btn-outline-light" target="_blank"><i class="fas fa-cloud-download-alt"></i> CV</a></li>
                     </ul>
                 </nav>
 
-                <!-- Navigation for mobile devices -->
                 <nav id="nav-mobile" class="sidenav close">
                     <ul class="nav nav-pills mb-5">
                         <li class="nav-item"><a href="about.html" class="nav-link nav-link-m" aria-current="page">About</a></li>
@@ -59,7 +190,7 @@
                         <li class="nav-item"><a href="contact.html" class="nav-link nav-link-m">Contact</a></li>
                         <li class="nav-item">
                             <a id="btn-resume" href="resume.pdf" download="Yaşar_Yiğit_Turan_CV.pdf" class="btn btn-outline-light" target="_blank">
-                                <i class="fas fa-cloud-download-alt"></i>CV
+                                <i class="fas fa-cloud-download-alt"></i> CV
                             </a>
                         </li>
                     </ul>
@@ -69,70 +200,232 @@
 
         <!-- Skills Section -->
         <section id="skills" class="bg-primary text-white">
-            <div class="container py-5">
+
+            <div class="container py-5 skill-content">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h2>Skills</h2>
-                        <p class="lead">Here are some of the skills I have developed in the field of Data Science and Machine Learning.</p>
+                        <h2 class="section-title animate__animated animate__fadeInDown">Skills</h2>
+                        <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">As a Hacettepe University Statistics 3rd year student, I've developed these skills in Data Science and Machine Learning through coursework and personal projects.</p>
+                         <!-- Removed Technical Skills H3 -->
+                         <!-- Removed Statistical Skills H3 -->
                     </div>
                 </div>
+
+                <!-- Skills Row 1 -->
+                <div class="row mt-4 animate__animated animate__fadeIn animate__delay-1s">
+                    <!-- Skill Card 1: Python -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <i class="fab fa-python skill-icon"></i>
+                                </div>
+                                <h5 class="card-title text-center">Python Programming</h5>
+                                <p class="card-text">Advanced proficiency in Python for statistical analysis, machine learning, and automation.</p>
+                                <div class="mt-3">
+                                    <span class="d-block mb-2">Key Libraries:</span>
+                                    <div>
+                                        <span class="badge skill-badge">NumPy</span>
+                                        <span class="badge skill-badge">Pandas</span>
+                                        <span class="badge skill-badge">Scikit-learn</span>
+                                        <span class="badge skill-badge">Statsmodels</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2: Machine Learning -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <i class="fas fa-brain skill-icon"></i>
+                                </div>
+                                <h5 class="card-title text-center">Machine Learning</h5>
+                                <p class="card-text">Skilled in developing and evaluating ML models for various statistical problems.</p>
+                                <div class="mt-3">
+                                    <span class="d-block mb-2">Techniques:</span>
+                                    <div>
+                                        <span class="badge skill-badge">Regression</span>
+                                        <span class="badge skill-badge">Classification</span>
+                                        <span class="badge skill-badge">Clustering</span>
+                                        <span class="badge skill-badge">Feature Engineering</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3: Data Viz -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <i class="fas fa-chart-bar skill-icon"></i>
+                                </div>
+                                <h5 class="card-title text-center">Data Visualization</h5>
+                                <p class="card-text">Creating insightful visualizations to communicate statistical findings effectively.</p>
+                                <div class="mt-3">
+                                    <span class="d-block mb-2">Tools:</span>
+                                    <div>
+                                        <span class="badge skill-badge">Matplotlib</span>
+                                        <span class="badge skill-badge">Seaborn</span>
+                                        <span class="badge skill-badge">Plotly</span>
+                                        <span class="badge skill-badge">Tableau</span>
+                                        <span class="badge skill-badge">Power BI</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Row 2 -->
+                <div class="row mt-4 animate__animated animate__fadeIn animate__delay-2s">
+                     <!-- Skill Card 4: Computer Vision (NEW) -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card skill-card bg-dark text-white h-100">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <i class="fas fa-eye skill-icon"></i> <!-- Eye icon for CV -->
+                                </div>
+                                <h5 class="card-title text-center">Computer Vision</h5>
+                                <p class="card-text">Understanding and applying techniques to enable computers to "see" and interpret visual data.</p>
+                                <div class="mt-3">
+                                    <span class="d-block mb-2">Areas & Tools:</span>
+                                    <div>
+                                        <span class="badge skill-badge">OpenCV</span>
+                                        <span class="badge skill-badge">Image Classification</span>
+                                        <span class="badge skill-badge">Object Detection</span>
+                                        <span class="badge skill-badge">CNNs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 5: Deep Learning -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card skill-card bg-dark text-white h-100">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <i class="fas fa-network-wired skill-icon"></i>
+                                </div>
+                                <h5 class="card-title text-center">Deep Learning</h5>
+                                <p class="card-text">Experience with neural networks and deep learning frameworks for complex problems.</p>
+                                <div class="mt-3">
+                                    <span class="d-block mb-2">Frameworks:</span>
+                                    <div>
+                                        <span class="badge skill-badge">TensorFlow</span>
+                                        <span class="badge skill-badge">Keras</span>
+                                        <span class="badge skill-badge">PyTorch</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 6: NLP -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card skill-card bg-dark text-white h-100">
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <i class="fas fa-language skill-icon"></i>
+                                </div>
+                                <h5 class="card-title text-center">Natural Language Processing</h5>
+                                <p class="card-text">Applying statistical methods to text data for analysis and modeling.</p>
+                                <div class="mt-3">
+                                    <span class="d-block mb-2">Techniques:</span>
+                                    <div>
+                                        <span class="badge skill-badge">Text Classification</span>
+                                        <span class="badge skill-badge">Sentiment Analysis</span>
+                                        <span class="badge skill-badge">Word Embeddings</span>
+                                        <span class="badge skill-badge">Transformers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Skills Row 3 -->
                 <div class="row mt-4">
-                    <!-- Skill Card 1 -->
+                     <!-- Skill Card 7: Data Wrangling -->
                     <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Python Programming</h5>
-                                <p class="card-text">Proficient in Python for data analysis, machine learning, and automation. Experienced with libraries like NumPy, Pandas, and Scikit-learn.</p>
+                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp"> <!-- Add animation back if desired -->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <i class="fas fa-database skill-icon"></i>
+                                </div>
+                                <h5 class="card-title text-center">Data Wrangling</h5>
+                                <p class="card-text">Cleaning, transforming and preparing raw data for analysis.</p>
+                                <div class="mt-3">
+                                    <span class="d-block mb-2">Tools:</span>
+                                    <div>
+                                        <span class="badge skill-badge">Pandas</span>
+                                        <span class="badge skill-badge">SQL</span>
+                                        <span class="badge skill-badge">Excel</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Skill Card 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Machine Learning</h5>
-                                <p class="card-text">Skilled in building and deploying machine learning models for classification, regression, and clustering tasks.</p>
+
+                     <!-- Skill Card 8: Statistical Analysis -->
+                    <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft"> <!-- Adjust animation if needed -->
+                        <div class="card bg-dark text-white h-100">
+                            <div class="card-body p-4">
+                                <h5 class="card-title"><i class="fas fa-calculator me-2"></i>Statistical Analysis</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Probability & Inference</li> <!-- Shortened -->
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Hypothesis Testing</li> <!-- Shortened -->
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Regression Analysis</li> <!-- Shortened -->
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Time Series Analysis</li> <!-- Shortened -->
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Experimental Design</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <!-- Skill Card 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Data Visualization</h5>
-                                <p class="card-text">Experienced in creating insightful visualizations using Matplotlib, Seaborn, and Plotly.</p>
+
+                     <!-- Skill Card 9: Statistical Software -->
+                    <div class="col-md-4 mb-4 animate__animated animate__fadeInRight"> <!-- Adjust animation if needed -->
+                        <div class="card bg-dark text-white h-100">
+                            <div class="card-body p-4">
+                                <h5 class="card-title"><i class="fas fa-flask me-2"></i>Statistical Software</h5>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/724px-R_logo.svg.png" width="30" height="30" class="me-2 bg-light p-1 rounded">
+                                            <span>R Programming</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fab fa-python me-2 statistical-software-icon"></i>
+                                            <span>Python (Stats)</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-3">
+                                             <i class="fas fa-table me-2 statistical-software-icon"></i> <!-- Generic icon for Minitab -->
+                                             <span>Minitab</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <i class="fas fa-table me-2 statistical-software-icon"></i> <!-- Generic icon for SPSS -->
+                                            <span>SPSS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Progress Bar Removed -->
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mt-4">
-                    <!-- Skill Card 4 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Deep Learning</h5>
-                                <p class="card-text">Knowledgeable in deep learning frameworks like TensorFlow and PyTorch for building neural networks.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card 5 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Natural Language Processing</h5>
-                                <p class="card-text">Experienced in NLP techniques for text classification, sentiment analysis, and language modeling.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Skill Card 6 -->
-                   
-                </div>
+                </div> <!-- End Row 3 -->
+
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="container-cover bg-primary text-center text-white justify-content-center">
-            <!-- links to socials for mobile clients -->
+        <footer class="container-cover bg-primary text-center text-white justify-content-center py-3">
             <div id="social-bar" class="container text-center">
                 <div class="d-flex justify-content-around">
                     <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank">
@@ -148,15 +441,41 @@
                         <i class="fab fa-kaggle"></i>
                     </a>
                     <a title="X Profile" href="https://x.com/yigitturan_" target="_blank">
-                        <i class="fab fa-twitter"></i> <!-- X is using the same icon as Twitter -->
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
             </div>
-            <p>&copy; 2025 Yaşar Yiğit Turan.</p>
+
         </footer>
 
         <!-- Bootstrap JS and dependencies -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="js/navbar.js"></script>
-    </body>
+
+        <script>
+            // Animation trigger on scroll
+            document.addEventListener('DOMContentLoaded', function() {
+                const elementsToAnimate = document.querySelectorAll('.animate__animated');
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const animationClasses = Array.from(entry.target.classList).filter(cls => cls.startsWith('animate__') && cls !== 'animate__animated');
+                            entry.target.classList.add(...animationClasses);
+                            entry.target.style.visibility = 'visible';
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                elementsToAnimate.forEach(el => {
+                    el.style.visibility = 'hidden';
+                    observer.observe(el);
+                });
+            });
+        </script>
+    </body> 
+    <p class="mb-0">© 2025 Yaşar Yiğit Turan.</p>
 </html>
