@@ -30,12 +30,19 @@
         <style>
             /* Define accent color variable */
             :root {
-                --custom-accent-blue: #3498db; /* Brighter blue for accents */
+                --custom-accent-blue: #3e9ddd; /* Brighter blue for accents */
+                --dark-background: #16213e;
+                --card-background: #1a1a2e;
+                --footer-background: #16213e;
+                --text-light: #ffffff;
+                --text-dark: #1a1a2e;
             }
 
             body {
                 overflow-x: hidden;
                 position: relative;
+                color: var(--text-dark);
+                background-color: #16213e;
             }
 
             #skills {
@@ -44,22 +51,24 @@
                 padding-bottom: 60px;
                 position: relative;
                 overflow: visible;
-                 color: #ffffff; /* Default text color on primary background */
+                background-color: var(--dark-background); 
+                color: var(--text-light);
             }
 
-             #header .nav-link.active {
-                 color: var(--custom-accent-blue) !important;
-                 font-weight: bold;
-             }
-             #header #btn-resume {
+            #header .nav-link.active {
+                color: var(--custom-accent-blue) !important;
+                font-weight: bold;
+            }
+            
+            #header #btn-resume {
                 border-color: var(--custom-accent-blue);
                 color: var(--custom-accent-blue);
-             }
-              #header #btn-resume:hover {
-                 background-color: var(--custom-accent-blue);
-                 color: #212529;
-             }
-
+            }
+            
+            #header #btn-resume:hover {
+                background-color: var(--custom-accent-blue);
+                color: var(--text-light);
+            }
 
             .skill-card {
                 transition: all 0.3s ease;
@@ -69,7 +78,8 @@
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
                 height: 100%;
                 transform: translateY(0);
-                color: #ecf0f1; /* Light text on dark card background */
+                color: var(--text-light);
+                background-color: var(--card-background);
             }
 
             .skill-card:hover {
@@ -85,7 +95,7 @@
 
             .skill-badge {
                 background-color: var(--custom-accent-blue);
-                color: #ffffff;
+                color: var(--text-light);
                 margin-right: 5px;
                 margin-bottom: 5px;
                 font-weight: 500;
@@ -99,8 +109,8 @@
             .section-title {
                 position: relative;
                 display: inline-block;
-                margin-bottom: 30px; /* Adjusted margin after removing subheadings */
-                color: #ffffff;
+                margin-bottom: 30px;
+                color: var(--text-light);
             }
 
             .section-title:after {
@@ -113,36 +123,46 @@
                 left: 15%;
             }
 
-            /* Change color for H5 card titles specifically */
-            #skills .skill-card h5.card-title {
-                color: var(--custom-accent-blue); /* Use accent color for card titles */
+            /* Ensure all headings are white */
+            h1, h2, h3, h4, h5, h6 {
+                color: var(--text-light) !important;
             }
-            /* Keep H3 (if any remain elsewhere) default or styled differently */
-            #skills h3 {
-                 color: #ffffff; /* Example default color if H3 were used */
-            }
-
 
             .text-success-custom {
-                 color: var(--custom-accent-blue) !important;
+                color: var(--custom-accent-blue) !important;
             }
 
             .statistical-software-icon {
-                 color: #ecf0f1;
-                 font-size: 1.8rem;
+                color: var(--text-light);
+                font-size: 1.8rem;
             }
 
-             footer {
-                 color: #ffffff;
-             }
-             #social-bar a i {
-                 color: #ffffff;
-                 transition: color 0.3s ease;
-             }
-             #social-bar a:hover i {
-                 color: var(--custom-accent-blue);
-             }
+            footer {
+                background-color: var(--footer-background); 
+                color: var(--text-light);
+            }
+            
+            #social-bar a i {
+                color: var(--text-light);
+                transition: color 0.3s ease;
+            }
+            
+            #social-bar a:hover i {
+                color: var(--custom-accent-blue);
+            }
 
+            /* Navigation styling */
+            #brand-logo {
+                color: var(--text-light) !important;
+            }
+            
+            .nav-link {
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+            
+            .nav-link:hover {
+                color: var(--custom-accent-blue) !important;
+            }
 
             @media (max-width: 768px) {
                 .skill-card {
@@ -152,8 +172,9 @@
                 #skills {
                     padding-top: 70px;
                 }
-                 .section-title {
-                    margin-bottom: 20px; /* Adjust spacing on smaller screens */
+                
+                .section-title {
+                    margin-bottom: 20px;
                 }
             }
         </style>
@@ -161,7 +182,7 @@
     <body>
         <header id="header" class="fixed-top">
              <div class="py-2 flex-wrap justify-content-center">
-                <a href="/" id="brand-logo" class="align-items-center mb-3 mb-md-0 me-md-auto text-light text-decoration-none">
+                <a href="/" id="brand-logo" class="align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
                     <span class="fs-5">Yaşar Yiğit Turan</span>
                 </a>
                 <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
@@ -171,7 +192,7 @@
                     </div>
                 </button>
 
-                <nav id="nav-desktop" class="navbar navbar-dark indigo darken-2">
+                <nav id="nav-desktop" class="navbar navbar-dark">
                     <ul class="nav nav-pills">
                         <li class="nav-item"><a href="about.html" class="nav-link" aria-current="page">About</a></li>
                         <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
@@ -199,15 +220,12 @@
         </header>
 
         <!-- Skills Section -->
-        <section id="skills" class="bg-primary text-white">
-
+        <section id="skills" class="text-white">
             <div class="container py-5 skill-content">
                 <div class="row">
                     <div class="col-12 text-center">
                         <h2 class="section-title animate__animated animate__fadeInDown">Skills</h2>
-                        <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">As a Hacettepe University Statistics 3rd year student, I've developed these skills in Data Science and Machine Learning through coursework and personal projects.</p>
-                         <!-- Removed Technical Skills H3 -->
-                         <!-- Removed Statistical Skills H3 -->
+                        <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">I've developed these skills in Data Science and Machine Learning through coursework and personal projects.</p>
                     </div>
                 </div>
 
@@ -215,7 +233,7 @@
                 <div class="row mt-4 animate__animated animate__fadeIn animate__delay-1s">
                     <!-- Skill Card 1: Python -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp">
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fab fa-python skill-icon"></i>
@@ -237,7 +255,7 @@
 
                     <!-- Skill Card 2: Machine Learning -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp animate__delay-1s">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-brain skill-icon"></i>
@@ -259,7 +277,7 @@
 
                     <!-- Skill Card 3: Data Viz -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp animate__delay-2s">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-chart-bar skill-icon"></i>
@@ -283,12 +301,12 @@
 
                 <!-- Skills Row 2 -->
                 <div class="row mt-4 animate__animated animate__fadeIn animate__delay-2s">
-                     <!-- Skill Card 4: Computer Vision (NEW) -->
+                     <!-- Skill Card 4: Computer Vision -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card bg-dark text-white h-100">
+                        <div class="card skill-card h-100">
                             <div class="card-body p-4">
                                 <div class="text-center">
-                                    <i class="fas fa-eye skill-icon"></i> <!-- Eye icon for CV -->
+                                    <i class="fas fa-eye skill-icon"></i>
                                 </div>
                                 <h5 class="card-title text-center">Computer Vision</h5>
                                 <p class="card-text">Understanding and applying techniques to enable computers to "see" and interpret visual data.</p>
@@ -307,7 +325,7 @@
 
                     <!-- Skill Card 5: Deep Learning -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card bg-dark text-white h-100">
+                        <div class="card skill-card h-100">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-network-wired skill-icon"></i>
@@ -328,7 +346,7 @@
 
                     <!-- Skill Card 6: NLP -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card bg-dark text-white h-100">
+                        <div class="card skill-card h-100">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-language skill-icon"></i>
@@ -353,7 +371,7 @@
                 <div class="row mt-4">
                      <!-- Skill Card 7: Data Wrangling -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card bg-dark text-white h-100 animate__animated animate__fadeInUp"> <!-- Add animation back if desired -->
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-database skill-icon"></i>
@@ -373,15 +391,15 @@
                     </div>
 
                      <!-- Skill Card 8: Statistical Analysis -->
-                    <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft"> <!-- Adjust animation if needed -->
-                        <div class="card bg-dark text-white h-100">
+                    <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+                        <div class="card h-100" style="background-color: var(--card-background);">
                             <div class="card-body p-4">
                                 <h5 class="card-title"><i class="fas fa-calculator me-2"></i>Statistical Analysis</h5>
                                 <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Probability & Inference</li> <!-- Shortened -->
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Hypothesis Testing</li> <!-- Shortened -->
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Regression Analysis</li> <!-- Shortened -->
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Time Series Analysis</li> <!-- Shortened -->
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Probability & Inference</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Hypothesis Testing</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Regression Analysis</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Time Series Analysis</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Experimental Design</li>
                                 </ul>
                             </div>
@@ -389,8 +407,8 @@
                     </div>
 
                      <!-- Skill Card 9: Statistical Software -->
-                    <div class="col-md-4 mb-4 animate__animated animate__fadeInRight"> <!-- Adjust animation if needed -->
-                        <div class="card bg-dark text-white h-100">
+                    <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
+                        <div class="card h-100" style="background-color: var(--card-background);">
                             <div class="card-body p-4">
                                 <h5 class="card-title"><i class="fas fa-flask me-2"></i>Statistical Software</h5>
                                 <div class="row">
@@ -406,26 +424,24 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="d-flex align-items-center mb-3">
-                                             <i class="fas fa-table me-2 statistical-software-icon"></i> <!-- Generic icon for Minitab -->
+                                             <i class="fas fa-table me-2 statistical-software-icon"></i>
                                              <span>Minitab</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-3">
-                                            <i class="fas fa-table me-2 statistical-software-icon"></i> <!-- Generic icon for SPSS -->
+                                            <i class="fas fa-table me-2 statistical-software-icon"></i>
                                             <span>SPSS</span>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Progress Bar Removed -->
                             </div>
                         </div>
                     </div>
-                </div> <!-- End Row 3 -->
-
+                </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="container-cover bg-primary text-center text-white justify-content-center py-3">
+        <footer class="text-center py-3" style="background-color: var(--footer-background);">
             <div id="social-bar" class="container text-center">
                 <div class="d-flex justify-content-around">
                     <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank">
@@ -445,7 +461,7 @@
                     </a>
                 </div>
             </div>
-
+            <p class="mb-0 mt-2">© 2025 Yaşar Yiğit Turan.</p>
         </footer>
 
         <!-- Bootstrap JS and dependencies -->
@@ -476,6 +492,6 @@
                 });
             });
         </script>
-    </body> 
-    <p class="mb-0">© 2025 Yaşar Yiğit Turan.</p>
+    </body>
 </html>
+
