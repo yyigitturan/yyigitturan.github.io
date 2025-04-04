@@ -7,6 +7,7 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- !!! portfolio.css dosyasının index.html ile aynı olduğundan emin ol !!! -->
         <link href="css/portfolio.css" rel="stylesheet">
 
         <!-- Google Font -->
@@ -22,179 +23,458 @@
 
         <!-- Icons -->
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-        <title>Yaşar Yiğit Turan - Projects</title>
+        <!-- Sayfa Başlığı Güncellendi -->
+        <title>Projects - Yaşar Yiğit Turan</title>
+
+        <style>
+            /* İsteğe bağlı: Proje kartları için ek stil (portfolio.css'e de taşıyabilirsin) */
+            .project-card {
+                background-color: #212834; /* Ana arka plandan biraz farklı bir koyu ton */
+                border: none;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+                margin-bottom: 2rem; /* Kartlar arası boşluk */
+            }
+            .project-card:hover {
+                transform: translateY(-5px); /* Hafif yukarı kalkma efekti */
+            }
+            .project-card .card-title a {
+                color: white;
+                text-decoration: none;
+            }
+             .project-card .card-title a:hover {
+                color: #0dcaf0; /* Vurgu rengi - portfolio.css'ten alabilir */
+             }
+             .project-card .badge {
+                 background-color: #6c757d; /* Bootstrap secondary veya başka bir renk */
+             }
+        </style>
+
     </head>
     <body>
+        <!-- Header (index.html ile aynı) -->
         <header id="header" class="fixed-top">
             <div class="py-2 flex-wrap justify-content-center">
                 <a href="/" id="brand-logo" class="align-items-center mb-3 mb-md-0 me-md-auto text-light text-decoration-none">
                     <span class="fs-5">Yaşar Yiğit Turan</span>
                 </a>
-                <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
-                    aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- Mobil Menü Butonu (Bootstrap 5 Uyumlu) -->
+                <button class="navbar-toggler third-button" type="button" data-bs-toggle="collapse" data-bs-target="#nav-mobile-collapse"
+                    aria-controls="nav-mobile-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <div class="animated-icon3">
                         <span></span><span></span><span></span>
                     </div>
                 </button>
 
-                <!-- Navigation for desktop -->
-                <nav id="nav-desktop" class="navbar navbar-dark indigo darken-2">
+                <!-- Navigation for desktop (Projects aktif) -->
+                <nav id="nav-desktop" class="navbar navbar-dark"> <!-- indigo darken-2 kaldırıldı -->
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <!-- Projects link'i aktif hale getirildi -->
                         <li class="nav-item"><a href="projects.html" class="nav-link active">Projects</a></li>
                         <li class="nav-item"><a href="skills.html" class="nav-link">Skills</a></li>
                         <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-
-                        <li class="nav-item"><a id="btn-resume" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" class="btn btn-outline-light" target="_blank"><i class="fas fa-cloud-download-alt"></i>CV</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Navigation for mobile devices -->
-                <nav id="nav-mobile" class="sidenav close">
-                    <ul class="nav nav-pills mb-5">
-                        <li class="nav-item"><a href="about.html" class="nav-link nav-link-m" aria-current="page">About</a></li>
-                        <li class="nav-item"><a href="projects.html" class="nav-link nav-link-m active">Projects</a></li>
-                        <li class="nav-item"><a href="skills.html" class="nav-link nav-link-m">Skills</a></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link nav-link-m">Contact</a></li>
                         <li class="nav-item">
                             <a id="btn-resume" href="resume.pdf" download="Yaşar_Yiğit_Turan_CV.pdf" class="btn btn-outline-light" target="_blank">
-                                <i class="fas fa-cloud-download-alt"></i>CV
+                                <i class="fas fa-cloud-download-alt"></i> CV
                             </a>
                         </li>
                     </ul>
                 </nav>
+
+                 <!-- Navigation for mobile devices (Bootstrap 5 Collapse ile güncellendi) -->
+                 <div class="collapse navbar-collapse w-100" id="nav-mobile-collapse">
+                     <nav id="nav-mobile" class="w-100">
+                         <ul class="nav nav-pills flex-column text-center mt-3 mb-5">
+                             <li class="nav-item"><a href="about.html" class="nav-link nav-link-m">About</a></li>
+                             <!-- Mobil menüde Projects link'i aktif -->
+                             <li class="nav-item"><a href="projects.html" class="nav-link nav-link-m active">Projects</a></li>
+                             <li class="nav-item"><a href="skills.html" class="nav-link nav-link-m">Skills</a></li>
+                             <li class="nav-item"><a href="blog.html" class="nav-link nav-link-m">Blog</a></li>
+                             <li class="nav-item"><a href="contact.html" class="nav-link nav-link-m">Contact</a></li>
+                             <li class="nav-item mt-2">
+                                 <a id="btn-resume-mobile" href="resume.pdf" download="Yaşar_Yiğit_Turan_CV.pdf" class="btn btn-outline-light d-inline-block" target="_blank">
+                                     <i class="fas fa-cloud-download-alt"></i> CV
+                                 </a>
+                             </li>
+                         </ul>
+                     </nav>
+                 </div>
             </div>
         </header>
 
+        <!-- Side bar (index.html ile aynı) -->
+        <div id="side-bar" class="d-flex align-items-end">
+            <div class="container d-flex">
+                 <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank">
+                    <i class="far fa-envelope"></i>
+                </a>
+                <a title="LinkedIn Profile" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a title="GitHub Profile" href="https://github.com/yyigitturan" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a title="Kaggle Profile" href="https://www.kaggle.com/yaaryiitturan" target="_blank">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+                <a title="Medium Profile" href="https://medium.com/@yasaryigitturan" target="_blank">
+                    <i class="fab fa-medium"></i>
+                </a>
+                <a title="X Profile" href="https://x.com/yigitturan_" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+
         <!-- Projects Section -->
-        <section id="projects" class="bg-primary text-white">
-            <div class="container py-5">
+        <!-- Ana bölüm index.html'deki gibi bg-primary ve text-white ile kaplandı -->
+        <section id="projects" class="bg-primary text-white py-5" style="padding-top: 100px !important;"> <!-- Header için padding -->
+            <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h2>Projects</h2>
-                        <p class="lead">Here are some of the projects I have worked on.</p>
+                        <h1 class="display-4 mb-5">My Projects</h1>
                     </div>
                 </div>
-                <div class="row mt-4">
-                    <!-- Project Card 1 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Multi-Class Ethnic Classification</h5>
+
+                <!-- Proje Kartı -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10"> <!-- Kart genişliği ayarlandı -->
+                        <div class="card project-card text-white"> <!-- text-white eklendi -->
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-3">
+                                     <!-- Proje Başlığı ve Linki -->
+                                    <a href="https://www.kaggle.com/code/yaaryiitturan/sentiment-analysis-amazon-kozmos-reviews" target="_blank">
+                                        Sentiment Analysis: Amazon Kozmos Reviews <i class="fas fa-external-link-alt fa-xs ms-1"></i>
+                                    </a>
+                                </h3>
                                 <p class="card-text">
-                                    ○ Achieved a 91% accuracy, 89% recall rate in forecasting ethnic after extensive data preprocessing.<br>
-                                    ○ Handled class imbalance by applying SMOTE method, increasing macro average recall score by 7%.<br>
-                                    ○ Received the best score with logistic regression model compared to SVC, random forest, and AdaBoost.<br>
-                                    ○ Showed feature impact on the final model using the SHAP method.
+                                    I performed sentiment analysis by analyzing customer reviews for Kozmos, a home textile retailer. 
+                                    The reviews were preprocessed using NLP techniques (such as cleaning and lemmatization) and labeled as positive, neutral and negative using NLTK. 
+                                    Afterward, the text was vectorized using TF-IDF, and classification was performed using Logistic Regression and Random Forest models.
                                 </p>
-                                <a href="#" class="btn btn-outline-light" target="_blank">View Project</a>
+
+                                <!-- !!! RESİM EKLEME ALANI !!! -->
+                                <!-- src kısmını kendi resminin yoluyla değiştir -->
+                                <img src="img/word.png" 
+                                alt="Sentiment Analysis Proje Görseli" 
+                                class="img-fluid rounded my-3" 
+                                style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                                <!-- !!! RESİM EKLEME ALANI BİTİŞ !!! -->
+
+                                <div class="mt-3">
+                                    <!-- Kullanılan Teknolojiler (İsteğe Bağlı) -->
+                                    <span class="badge me-1">Python</span>
+                                    <span class="badge me-1">Pandas</span>
+                                    <span class="badge me-1">NLTK</span>
+                                    <span class="badge me-1">Scikit-learn</span>
+                                    <span class="badge me-1">Sentiment Analysis</span>
+                                    <span class="badge me-1">NLP</span>
+                                    <span class="badge me-1">TF-IDF</span>
+                                    <span class="badge me-1">Logistic Regression</span>
+                                    <span class="badge me-1">Random Forest</span>
+                                </div>
+
+                                 <!-- Kaggle Link Butonu -->
+                                <a href="https://www.kaggle.com/code/yaaryiitturan/sentiment-analysis-amazon-kozmos-reviews" class="btn btn-outline-light btn-sm mt-4" target="_blank">
+                                    View on Kaggle <i class="fab fa-kaggle ms-1"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card 2 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">E-Commerce Customer Insights</h5>
+                      <!-- Proje Kartı 2: Credit Score Prediction -->
+                    <div class="col-lg-8 col-md-10"> <!-- Yeni proje için aynı sütun yapısı -->
+                        <div class="card project-card text-white">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-3">
+                                    <!-- Proje başlığı (Linki varsa ekle, yoksa # bırakabilirsin) -->
+                                    <a href="#credit-score-project" target="_blank"> <!-- Placeholder link -->
+                                        Credit Score Prediction Using Artificial Neural Networks (ANN) <i class="fas fa-external-link-alt fa-xs ms-1"></i>
+                                    </a>
+                                </h3>
                                 <p class="card-text">
-                                    ○ Conducted exploratory data analysis (EDA) and outlier detection to ensure data quality and reliability.<br>
-                                    ○ Performed RFM analysis to segment customers into low, middle, and top groups.<br>
-                                    ○ Applied K-Means clustering and visualized the results in an understandable graph.
+                                    Developed an intelligent system for a finance company to classify customers into credit score brackets (Good, Standard, Poor).
+                                    Utilized Artificial Neural Networks (ANN) for prediction and addressed class imbalance using the SMOTE technique.
+                                    The project involved extensive data cleaning, feature engineering, preprocessing (scaling, encoding), and model evaluation.
                                 </p>
-                                <a href="#" class="btn btn-outline-light" target="_blank">View Project</a>
+
+                            <!-- !!! YENİ RESİM EKLEME ALANI !!! -->
+                            <!-- src kısmını kendi resminin yoluyla değiştir -->
+                                 <!-- !!! BOOTSTRAP CAROUSEL (FADE EFFECT) BAŞLANGICI !!! -->
+                                <!-- carousel-fade sınıfı isteğe bağlı, önce normal slide ile dene -->
+                                <div id="creditScoreCarousel" class="carousel slide my-3" data-bs-ride="false"> <!-- data-bs-ride="false" olarak değiştirildi (test için) -->
+                                    <!-- Göstergeler (Alttaki noktalar) -->
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#creditScoreCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#creditScoreCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    </div>
+
+                                    <!-- Kaydırıcı İçeriği -->
+                                    <div class="carousel-inner rounded">
+                                        <!-- Resim 1 -->
+                                        <div class="carousel-item active">
+                                            <img src="img/ann1.png" 
+                                            alt="Sentiment Analysis Proje Görseli" 
+                                            class="img-fluid rounded my-3" 
+                                            style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                                        </div>
+                                        <!-- Resim 2 -->
+                                        <div class="carousel-item">
+                                            <img src="img/ann2.png" 
+                                            alt="Sentiment Analysis Proje Görseli" 
+                                            class="img-fluid rounded my-3" 
+                                            style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                                        </div>
+                                    </div>
+
+                                    <!-- Kontroller (Sol/Sağ Oklar) -->
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#creditScoreCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#creditScoreCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                <!-- !!! BOOTSTRAP CAROUSEL BİTİŞİ !!! -->
+                            <!-- !!! RESİM EKLEME ALANI BİTİŞ !!! -->
+
+                                <div class="mt-3">
+                                    <!-- Kullanılan Teknolojiler -->
+                                    <span class="badge me-1">Python</span>
+                                    <span class="badge me-1">Pandas</span>
+                                    <span class="badge me-1">Scikit-learn</span>
+                                    <span class="badge me-1">TensorFlow</span>
+                                    <span class="badge me-1">Keras</span>
+                                    <span class="badge me-1">ANN</span>
+                                    <span class="badge me-1">SMOTE</span>
+                                    <span class="badge me-1">Imbalanced-learn</span>
+                                </div>
+
+                                                                  <!-- Kaggle Link Butonu -->
+                                <a href="https://www.kaggle.com/code/yaaryiitturan/credit-score-prediction-using-ann-smote" class="btn btn-outline-light btn-sm mt-4" target="_blank">
+                                    View on Kaggle <i class="fab fa-kaggle ms-1"></i>
+                                </a>
+
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card 3 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Credit Score Prediction</h5>
+
+
+                    <!-- Proje Kartı 3: E-commerce Customer Insights -->
+                    <div class="col-lg-8 col-md-10">
+                        <div class="card project-card text-white">
+                            <div class="card-body p-4">
+                                <h3 class="card-title mb-3">
+                                    <a href="https://www.kaggle.com/code/yaaryiitturan/e-commerce-customer-insights-rfm-clustering" target="_blank">
+                                        E-commerce Customer Insights (RFM & Clustering) <i class="fas fa-external-link-alt fa-xs ms-1"></i>
+                                    </a>
+                                </h3>
                                 <p class="card-text">
-                                    ○ Developed an artificial neural network (ANN) architecture, prevented overfitting, and handled class imbalance using the SMOTE method.<br>
-                                    ○ Increased accuracy score by 24% after handling outliers without overfitting in the final architecture.
+                                    Analyzed UK-based online retail data to understand customer behavior using RFM analysis and K-Means clustering.
+                                    Performed data cleaning, EDA, and calculated RFM scores (Recency, Frequency, Monetary) for customer segmentation.
+                                    Applied K-Means clustering to identify distinct customer groups and conducted Cohort Analysis to evaluate customer retention rates.
                                 </p>
-                                <a href="#" class="btn btn-outline-light" target="_blank">View Project</a>
+
+                                <!-- !!! CAROUSEL ALANI !!! -->
+                                <div id="ecommerceCarousel" class="carousel slide carousel-fade my-3" data-bs-ride="carousel">
+                                    <!-- Göstergeler -->
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#ecommerceCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#ecommerceCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#ecommerceCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#ecommerceCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                                    </div>
+
+                                    <!-- Kaydırıcı İçeriği -->
+                                    <div class="carousel-inner rounded">
+                                        <!-- Resim 1 -->
+                                        <div class="carousel-item active">
+                                            <!-- Fazladan > silindi -->
+                                            <img src="img/rfm1.png" class="d-block w-100" alt="E-commerce Insights - RFM Segments" style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                                        </div>
+                                        <!-- Resim 2 -->
+                                        <div class="carousel-item">
+                                            <!-- Fazladan > silindi -->
+                                            <img src="img/rfm2.png" class="d-block w-100" alt="E-commerce Insights - RFM Level Aggregation" style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                                        </div>
+                                        <!-- Resim 3 -->
+                                        <div class="carousel-item">
+                                            <!-- Fazladan > silindi -->
+                                            <img src="img/rfm3.png" class="d-block w-100" alt="E-commerce Insights - K-Means Elbow Method" style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                                        </div>
+                                        <!-- Resim 4 -->
+                                        <div class="carousel-item">
+                                            <!-- Fazladan > silindi -->
+                                            <img src="img/rfm4.png" class="d-block w-100" alt="E-commerce Insights - K-Means Clusters" style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                                        </div>
+                                    </div>
+
+                                    <!-- Kontroller -->
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#ecommerceCarousel" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#ecommerceCarousel" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                <!-- !!! CAROUSEL BİTİŞİ !!! -->
+
+                                <div class="mt-3">
+                                    <!-- Kullanılan Teknolojiler -->
+                                    <span class="badge me-1">Python</span>
+                                    <span class="badge me-1">Pandas</span>
+                                    <span class="badge me-1">Numpy</span>
+                                    <span class="badge me-1">Matplotlib</span>
+                                    <span class="badge me-1">Seaborn</span>
+                                    <span class="badge me-1">Scikit-learn</span>
+                                    <span class="badge me-1">RFM Analysis</span>
+                                    <span class="badge me-1">K-Means Clustering</span>
+                                </div>
+
+                                <!-- Link Butonu -->
+                                <a href="https://www.kaggle.com/code/yaaryiitturan/e-commerce-customer-insights-rfm-clustering" class="btn btn-outline-light btn-sm mt-4" target="_blank">
+                                    View on Kaggle <i class="fab fa-kaggle ms-1"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
+
+<!-- Proje Kartı 4: Multi-Class Ethnic Classification -->
+<div class="col-lg-8 col-md-10">
+    <div class="card project-card text-white">
+        <div class="card-body p-4">
+            <h3 class="card-title mb-3">
+                <a href="#ethnic-classification-project" target="_blank">
+                    Multi-Class Ethnic Classification <i class="fas fa-external-link-alt fa-xs ms-1"></i>
+                </a>
+            </h3>
+            <p class="card-text">
+                Utilized the ANSUR II dataset (U.S. Army anthropometric survey) to predict ethnicity based on body measurements.
+                Performed EDA, feature reduction, and applied various classification algorithms (Logistic Regression, SVM, RF, Boosting).
+                Addressed class imbalance using SMOTE and interpreted model predictions using SHAP values for enhanced explainability.
+            </p>
+
+            <!-- !!! CAROUSEL ALANI (Ethnic Classification) !!! -->
+            <div id="ethnicClassificationCarousel" class="carousel slide carousel-fade my-3" data-bs-ride="carousel">
+                <!-- Göstergeler - DÜZELTİLDİ -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#ethnicClassificationCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#ethnicClassificationCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#ethnicClassificationCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> <!-- 3. RESİM İÇİN EKLENDİ -->
                 </div>
-                <div class="row mt-4">
-                    <!-- Project Card 4 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Data Jobs Salary Statistical Analysis</h5>
-                                <p class="card-text">
-                                    ○ Analyzed job trends across different data roles.<br>
-                                    ○ Employed statistical methods such as Kruskal-Wallis and Dunn tests to compare mean salaries.<br>
-                                    ○ Used chi-squared tests to examine relationships between categorical variables and linear regression to model the impact of various factors on salary.
-                                </p>
-                                <a href="https://www.kaggle.com/code/yaaryiitturan/statistical-analysis-of-data-job-salaries-in-r" class="btn btn-outline-light" target="_blank">View Project</a>
-                            </div>
-                        </div>
+
+                <!-- Kaydırıcı İçeriği -->
+                <div class="carousel-inner rounded">
+                    <!-- Resim 1 -->
+
+                    <div class="carousel-item active">
+                        <!-- Inline style kaldırıldı -->
+                        <img src="img/e1.png" class="d-block w-100" alt="Ethnic Classification - Image 1" style="max-width: 40%; display: block; margin-left: auto; margin-right: auto;">
                     </div>
-                    <!-- Project Card 5 -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Online Retail Data Analysis</h5>
-                                <p class="card-text">
-                                    ○ Performed data cleaning, outlier detection, and exploratory data analysis (EDA).<br>
-                                    ○ Analyzed sales trends, customer behavior, and product performance.<br>
-                                    ○ Visualized results using interactive Plotly visualizations.
-                                </p>
-                                <a href="https://www.kaggle.com/code/yaaryiitturan/online-retail-data-analysis" class="btn btn-outline-light" target="_blank">View Project</a>
-                            </div>
-                        </div>
+                    <!-- Resim 2 -->
+                    <div class="carousel-item">
+                         <!-- Inline style kaldırıldı -->
+                        <img src="img/e2.png" class="d-block w-100" alt="Ethnic Classification - Image 2" style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
                     </div>
-                   <!-- Add this card to your projects section, likely in the second row after the existing cards -->
-                    <div class="col-md-4 mb-4">
-                        <div class="card bg-dark text-white">
-                            <div class="card-body">
-                                <h5 class="card-title">Sentiment Analysis - Amazon Kozmos Reviews</h5>
-                                <p class="card-text">
-                                    ○ Performed sentiment analysis on Amazon product reviews to classify them as positive ,neutral or negative.<br>
-                                    ○ Applied text preprocessing including lemmatization, stopword removal, and frequency filtering.<br>
-                                    ○ Visualized word frequencies and created word clouds for key insights.<br>
-                                    ○ Compared Logistic Regression and Random Forest models, achieving strong classification performance.
-                                </p>
-                                <a href="https://www.kaggle.com/code/yaaryiitturan/sentiment-analysis-amazon-kozmos-reviews" class="btn btn-outline-light" target="_blank">View Project</a>
-                            </div>
-                        </div>
-                    </div> 
+                    <!-- Resim 3 -->
+                    <div class="carousel-item">
+                        <!-- Inline style kaldırıldı -->
+                       <img src="img/e3.png" class="d-block w-100" alt="Ethnic Classification - Image 3" style="max-width: 80%; display: block; margin-left: auto; margin-right: auto;">
+                   </div>
+                </div>
+
+                <!-- Kontroller -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#ethnicClassificationCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#ethnicClassificationCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <!-- !!! CAROUSEL BİTİŞİ !!! -->
+
+            <div class="mt-3">
+                <!-- Kullanılan Teknolojiler -->
+                <span class="badge me-1">Python</span>
+                <span class="badge me-1">Pandas</span>
+                <span class="badge me-1">Scikit-learn</span>
+                <span class="badge me-1">LightGBM</span>
+                <span class="badge me-1">LazyPredict</span>
+                <span class="badge me-1">SMOTE</span>
+                <span class="badge me-1">SHAP</span>
+                <span class="badge me-1">Machine Learning</span>
+                <span class="badge me-1">Classification</span>
+            </div>
+
+             <!-- Link Butonu (Varsa Kaggle/GitHub linkini buraya ekle) -->
+            <a href="#ethnic-classification-project" class="btn btn-outline-light btn-sm mt-4" target="_blank">
+                View Details <!-- veya View on Kaggle/GitHub -->
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div> <!-- Proje Kartları Satırı Bitişi -->
+
+
+
+
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="container-cover bg-primary text-center text-white justify-content-center">
-            <!-- links to socials for mobile clients -->
-            <div id="social-bar" class="container text-center">
-                <div class="d-flex justify-content-around">
-                    <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank">
-                        <i class="far fa-envelope"></i>
+        <!-- Footer (index.html ile aynı) -->
+        <footer class="container-cover bg-primary text-center text-white justify-content-center py-4">
+            <div id="social-bar" class="container text-center mb-3">
+                <div class="d-flex justify-content-center">
+                    <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank" class="mx-2">
+                        <i class="far fa-envelope fa-lg"></i>
                     </a>
-                    <a title="LinkedIn Profile" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
+                    <a title="LinkedIn Profile" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" target="_blank" class="mx-2">
+                        <i class="fab fa-linkedin-in fa-lg"></i>
                     </a>
-                    <a title="GitHub Profile" href="https://github.com/yyigitturan" target="_blank">
-                        <i class="fab fa-github"></i>
+                    <a title="GitHub Profile" href="https://github.com/yyigitturan" target="_blank" class="mx-2">
+                        <i class="fab fa-github fa-lg"></i>
                     </a>
-                    <a title="Kaggle Profile" href="https://www.kaggle.com/yaaryiitturan" target="_blank">
-                        <i class="fab fa-kaggle"></i>
+                    <a title="Kaggle Profile" href="https://www.kaggle.com/yaaryiitturan" target="_blank" class="mx-2">
+                        <i class="fab fa-kaggle fa-lg"></i>
                     </a>
-                    <a title="X Profile" href="https://x.com/yigitturan_" target="_blank">
-                        <i class="fab fa-twitter"></i> <!-- X is using the same icon as Twitter -->
+                     <a title="Medium Profile" href="https://medium.com/@yasaryigitturan" target="_blank" class="mx-2">
+                         <i class="fab fa-medium fa-lg"></i>
+                    </a>
+                    <a title="X Profile" href="https://x.com/yigitturan_" target="_blank" class="mx-2">
+                        <i class="fab fa-twitter fa-lg"></i>
                     </a>
                 </div>
             </div>
-            <p>&copy; 2025 Yaşar Yiğit Turan.</p>
+            <p class="mb-0">© 2025 Yaşar Yiğit Turan.</p>
         </footer>
 
         <!-- Bootstrap JS and dependencies -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <!-- jQuery (navbar.js için gerekliyse) -->
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+        <!-- navbar.js (Bootstrap 5 uyumlu olduğundan emin ol) -->
         <script src="js/navbar.js"></script>
+        <!-- index.html'deki neural_network.js kaldırıldı (bu sayfada gereksizse) -->
+
+<!-- Sayfanın en sonunda bu satır OLMALI -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
     </body>
 </html>

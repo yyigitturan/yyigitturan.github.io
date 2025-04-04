@@ -7,7 +7,7 @@
 
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-        <link href="css/portfolio.css" rel="stylesheet"> <!-- Assuming this file exists -->
+        <link href="css/portfolio.css" rel="stylesheet">
 
         <!-- Google Font -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -28,46 +28,101 @@
         <title>Yaşar Yiğit Turan - Skills</title>
 
         <style>
-            /* Define accent color variable */
+            /* Using your color variables */
             :root {
-                --custom-accent-blue: #49a5e2; /* Brighter blue for accents */
-                --dark-background: #181D26;
-                --card-background: #31314d;
-                --footer-background: #16213e;
-                --text-light: #ffffff;
-                --text-dark: #1a1a2e;
+                --bs-dark: #111111;
+                --bg-primary: #181D26;
+                --bg-secondary: #212834;
+                --h-primary: #973275;
+                --h-secondary: #734848;
+                --bg-third: #99ADBF;
+                --bg-fourth: #B8CCD9;
             }
 
             body {
+                background-color: var(--bg-primary);
+                color: white;
+                font-family: 'Arimo', sans-serif;
                 overflow-x: hidden;
-                position: relative;
-                color: var(--text-dark);
-                background-color: #181D26;
             }
 
-            #skills {
-                min-height: 100vh;
-                padding-top: 80px;
-                padding-bottom: 60px;
-                position: relative;
-                overflow: visible;
-                background-color: var(--dark-background); 
-                color: var(--text-light);
+            /* Header/Navbar styling (same as homepage) */
+            #header {
+                background-color: var(--bg-primary);
+                padding: 0.5rem 3rem;
+                border-bottom: none;
+                transition: top 0.3s;
             }
 
+            #header .nav-link {
+                color: white !important;
+                padding: 0.5rem 1rem;
+            }
+            
+            #header .nav-link:hover,
+            #header .nav-link:focus {
+                color: var(--h-primary) !important;
+            }
+            
             #header .nav-link.active {
-                color: var(--custom-accent-blue) !important;
+                color: var(--h-primary) !important;
                 font-weight: bold;
             }
             
             #header #btn-resume {
-                border-color: var(--custom-accent-blue);
-                color: var(--custom-accent-blue);
+                border-color: var(--h-primary);
+                color: var(--h-primary);
+                margin-left: 10px;
             }
             
             #header #btn-resume:hover {
-                background-color: var(--custom-accent-blue);
-                color: var(--text-light);
+                background-color: var(--h-primary);
+                color: white;
+            }
+
+            #brand-logo {
+                color: white !important;
+                font-weight: 700;
+                letter-spacing: 3px;
+            }
+
+            /* Sidebar styling (same as homepage) */
+            #side-bar {
+                width: auto;
+                height: 100%;
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 2;
+                background-color: var(--bg-primary);
+            }
+            
+            #side-bar .container {
+                display: flex;
+                flex-direction: column;
+                bottom: 50px;
+                margin: 0;
+            }
+            
+            #side-bar a {
+                padding: 10px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            #side-bar a:hover > .fab, 
+            #side-bar a:hover > .far {
+                color: var(--h-primary);
+                transform: translateY(-5px);
+                transition-duration: 0.4s;
+            }
+            
+
+
+            /* Skills section specific styling */
+            #skills {
+                padding: 100px 0;
+                background-color: var(--bg-primary);
             }
 
             .skill-card {
@@ -78,8 +133,9 @@
                 box-shadow: 0 5px 15px rgba(0,0,0,0.2);
                 height: 100%;
                 transform: translateY(0);
-                color: var(--text-light);
-                background-color: var(--card-background);
+                color: white;
+                background-color: var(--bg-secondary);
+                margin-bottom: 20px;
             }
 
             .skill-card:hover {
@@ -90,27 +146,22 @@
             .skill-icon {
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
-                color: var(--custom-accent-blue);
+                color: var(--h-primary);
             }
 
             .skill-badge {
-                background-color: var(--custom-accent-blue);
-                color: var(--text-light);
+                background-color: var(--h-primary);
+                color: white;
                 margin-right: 5px;
                 margin-bottom: 5px;
                 font-weight: 500;
-            }
-
-            .skill-content {
-                position: relative;
-                z-index: 1;
             }
 
             .section-title {
                 position: relative;
                 display: inline-block;
                 margin-bottom: 30px;
-                color: var(--text-light);
+                color: white;
             }
 
             .section-title:after {
@@ -118,70 +169,57 @@
                 position: absolute;
                 width: 70%;
                 height: 3px;
-                background: var(--custom-accent-blue);
+                background: var(--h-primary);
                 bottom: -10px;
                 left: 15%;
             }
 
-            /* Ensure all headings are white */
-            h1, h2, h3, h4, h5, h6 {
-                color: var(--text-light) !important;
-            }
-
-            .text-success-custom {
-                color: var(--custom-accent-blue) !important;
-            }
-
-            .statistical-software-icon {
-                color: var(--text-light);
-                font-size: 1.8rem;
-            }
-
+            /* Footer styling */
             footer {
-                background-color: var(--footer-background); 
-                color: var(--text-light);
+                padding: 0 0 1.5rem 0;
+                background-color: var(--bg-primary);
+            }
+            
+            footer p {
+                color: var(--bg-fourth);
+                margin: 0;
             }
             
             #social-bar a i {
-                color: var(--text-light);
+                color: white;
                 transition: color 0.3s ease;
             }
             
             #social-bar a:hover i {
-                color: var(--custom-accent-blue);
+                color: var(--h-primary);
             }
 
-            /* Navigation styling */
-            #brand-logo {
-                color: var(--text-light) !important;
-            }
-            
-            .nav-link {
-                color: rgba(255, 255, 255, 0.8) !important;
-            }
-            
-            .nav-link:hover {
-                color: var(--custom-accent-blue) !important;
-            }
-
-            @media (max-width: 768px) {
-                .skill-card {
-                    margin-bottom: 20px;
+            /* Responsive adjustments */
+            @media (max-width: 992px) {
+                #side-bar, #nav-desktop {
+                    display: none !important;
                 }
-
+                
                 #skills {
-                    padding-top: 70px;
+                    padding: 70px 0;
                 }
                 
                 .section-title {
                     margin-bottom: 20px;
                 }
             }
+
+            @media (max-width: 768px) {
+                #skills {
+                    padding: 50px 0;
+                }
+            }
         </style>
     </head>
     <body>
+        <!-- Header/Navbar (same as homepage) -->
         <header id="header" class="fixed-top">
-             <div class="py-2 flex-wrap justify-content-center">
+            <div class="py-2 flex-wrap justify-content-center">
                 <a href="/" id="brand-logo" class="align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
                     <span class="fs-5">Yaşar Yiğit Turan</span>
                 </a>
@@ -192,23 +230,32 @@
                     </div>
                 </button>
 
+                <!-- Navigation for desktop -->
                 <nav id="nav-desktop" class="navbar navbar-dark">
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a href="about.html" class="nav-link" aria-current="page">About</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
                         <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li>
-                        <li class="nav-item"><a href="skills.html" class="nav-link active">Skills</a></li>
+                        <li class="nav-item"><a href="skills.html" class="nav-link active" style="color: white !important;">Skills</a></li>
                         <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                        <li class="nav-item"><a id="btn-resume" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" class="btn btn-outline-light" target="_blank"><i class="fas fa-cloud-download-alt"></i> CV</a></li>
+
+                        <!-- CV Download Button -->
+                        <li class="nav-item">
+                            <a id="btn-resume" href="resume.pdf" download="Yaşar_Yiğit_Turan_CV.pdf" class="btn btn-outline-light" target="_blank">
+                                <i class="fas fa-cloud-download-alt"></i> CV
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
+                <!-- Navigation for mobile devices -->
                 <nav id="nav-mobile" class="sidenav close">
                     <ul class="nav nav-pills mb-5">
-                        <li class="nav-item"><a href="about.html" class="nav-link nav-link-m" aria-current="page">About</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link nav-link-m">About</a></li>
                         <li class="nav-item"><a href="projects.html" class="nav-link nav-link-m">Projects</a></li>
-                        <li class="nav-item"><a href="skills.html" class="nav-link nav-link-m active">Skills</a></li>
+                        <li class="nav-item"><a href="skills.html" class="nav-link nav-link-m active" style="color: white !important;">Skills</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link nav-link-m">Contact</a></li>
+                        <!-- CV Download Button (Mobile) -->
                         <li class="nav-item">
                             <a id="btn-resume" href="resume.pdf" download="Yaşar_Yiğit_Turan_CV.pdf" class="btn btn-outline-light" target="_blank">
                                 <i class="fas fa-cloud-download-alt"></i> CV
@@ -219,9 +266,33 @@
             </div>
         </header>
 
+        <!-- Side bar for social links for desktop clients (same as homepage) -->
+        <div id="side-bar" class="d-flex align-items-end">
+            <div class="container d-flex">
+                <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank">
+                    <i class="far fa-envelope"></i>
+                </a>
+                <a title="LinkedIn Profile" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a title="GitHub Profile" href="https://github.com/yyigitturan" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a title="Kaggle Profile" href="https://www.kaggle.com/yaaryiitturan" target="_blank">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+                <a title="Medium Profile" href="https://medium.com/@yasaryigitturan" target="_blank">
+                    <i class="fab fa-medium"></i>
+                </a>
+                <a title="X Profile" href="https://x.com/yigitturan_" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>   
+        </div>
+
         <!-- Skills Section -->
         <section id="skills" class="text-white">
-            <div class="container py-5 skill-content">
+            <div class="container py-5">
                 <div class="row">
                     <div class="col-12 text-center">
                         <h2 class="section-title animate__animated animate__fadeInDown">Skills</h2>
@@ -230,7 +301,7 @@
                 </div>
 
                 <!-- Skills Row 1 -->
-                <div class="row mt-4 animate__animated animate__fadeIn animate__delay-1s">
+                <div class="row mt-4">
                     <!-- Skill Card 1: Python -->
                     <div class="col-md-4 mb-4">
                         <div class="card skill-card h-100 animate__animated animate__fadeInUp">
@@ -291,7 +362,6 @@
                                         <span class="badge skill-badge">Seaborn</span>
                                         <span class="badge skill-badge">Plotly</span>
                                         <span class="badge skill-badge">Tableau</span>
-                                        <span class="badge skill-badge">Power BI</span>
                                     </div>
                                 </div>
                             </div>
@@ -300,10 +370,10 @@
                 </div>
 
                 <!-- Skills Row 2 -->
-                <div class="row mt-4 animate__animated animate__fadeIn animate__delay-2s">
+                <div class="row mt-4">
                      <!-- Skill Card 4: Computer Vision -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card h-100">
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-eye skill-icon"></i>
@@ -325,7 +395,7 @@
 
                     <!-- Skill Card 5: Deep Learning -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card h-100">
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp animate__delay-1s">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-network-wired skill-icon"></i>
@@ -346,7 +416,7 @@
 
                     <!-- Skill Card 6: NLP -->
                     <div class="col-md-4 mb-4">
-                        <div class="card skill-card h-100">
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp animate__delay-2s">
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <i class="fas fa-language skill-icon"></i>
@@ -391,57 +461,64 @@
                     </div>
 
                      <!-- Skill Card 8: Statistical Analysis -->
-                    <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
-                        <div class="card h-100" style="background-color: var(--card-background);">
+                    <div class="col-md-4 mb-4">
+                        <div class="card skill-card h-100 animate__animated animate__fadeInUp animate__delay-1s">
                             <div class="card-body p-4">
-                                <h5 class="card-title"><i class="fas fa-calculator me-2"></i>Statistical Analysis</h5>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Probability & Inference</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Hypothesis Testing</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Regression Analysis</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Time Series Analysis</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success-custom me-2"></i>Experimental Design</li>
+                                <div class="text-center">
+                                    <i class="fas fa-calculator skill-icon"></i>
+                                </div>
+                                <h5 class="card-title text-center">Statistical Analysis</h5>
+                                <ul class="list-unstyled mt-3">
+                                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--h-primary);"></i>Probability & Inference</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--h-primary);"></i>Hypothesis Testing</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--h-primary);"></i>Regression Analysis</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--h-primary);"></i>Time Series Analysis</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle me-2" style="color: var(--h-primary);"></i>Experimental Design</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
                      <!-- Skill Card 9: Statistical Software -->
-                    <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
-                        <div class="card h-100" style="background-color: var(--card-background);">
-                            <div class="card-body p-4">
-                                <h5 class="card-title"><i class="fas fa-flask me-2"></i>Statistical Software</h5>
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center mb-3">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/724px-R_logo.svg.png" width="30" height="30" class="me-2 bg-light p-1 rounded">
-                                            <span>R Programming</span>
-                                        </div>
-                                        <div class="d-flex align-items-center mb-3">
-                                            <i class="fab fa-python me-2 statistical-software-icon"></i>
-                                            <span>Python (Stats)</span>
-                                        </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card skill-card h-100 animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="card-body p-4">
+                            <div class="text-center">
+                                <i class="fas fa-flask skill-icon"></i>
+                            </div>
+                            <h5 class="card-title text-center">Statistical Software</h5>
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/724px-R_logo.svg.png" width="30" height="30" class="me-2 bg-light p-1 rounded">
+                                        <span>R Programming</span>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center mb-3">
-                                             <i class="fas fa-table me-2 statistical-software-icon"></i>
-                                             <span>Minitab</span>
-                                        </div>
-                                        <div class="d-flex align-items-center mb-3">
-                                            <i class="fas fa-table me-2 statistical-software-icon"></i>
-                                            <span>SPSS</span>
-                                        </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fab fa-python me-2" style="color: white; font-size: 1.8rem;"></i>
+                                        <span>Python (Stats)</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/minitab.png" width="30" height="30" class="me-2 bg-light p-1 rounded">
+                                        <span>Minitab</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <img src="img/spss.jpg" width="30" height="30" class="me-2 bg-light p-1 rounded">
+                                        <span>SPSS</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="text-center py-3" style="background-color: var(--footer-background);">
+        <footer class="text-center py-3">
             <div id="social-bar" class="container text-center">
                 <div class="d-flex justify-content-around">
                     <a title="Contact Email" href="mailto:yigitturan19319@gmail.com" target="_blank">
@@ -461,11 +538,12 @@
                     </a>
                 </div>
             </div>
-            
+            <p>&copy; 2025 Yaşar Yiğit Turan.</p>
         </footer>
 
         <!-- Bootstrap JS and dependencies -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
         <script src="js/navbar.js"></script>
 
         <script>
@@ -478,7 +556,6 @@
                         if (entry.isIntersecting) {
                             const animationClasses = Array.from(entry.target.classList).filter(cls => cls.startsWith('animate__') && cls !== 'animate__animated');
                             entry.target.classList.add(...animationClasses);
-                            entry.target.style.visibility = 'visible';
                             observer.unobserve(entry.target);
                         }
                     });
@@ -487,11 +564,9 @@
                 });
 
                 elementsToAnimate.forEach(el => {
-                    el.style.visibility = 'hidden';
                     observer.observe(el);
                 });
             });
         </script>
     </body>
 </html>
-
