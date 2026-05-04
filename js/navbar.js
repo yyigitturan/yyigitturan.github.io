@@ -15,15 +15,20 @@ $(document).ready(function () {
 // Scroll behaviour
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
+  var header = document.getElementById("header");
+  if (!header) return;
+
+  // Keep header visible while mobile menu is open.
+  if (!$('.sidenav').hasClass('close')) {
+    header.style.top = "0";
+    return;
+  }
+
   var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("header").style.top = "0";
+  if (prevScrollpos > currentScrollPos || currentScrollPos < 12) {
+    header.style.top = "0";
   } else {
-    if (window.screen.availWidth < 992) {
-      document.getElementById("header").style.top = "-62px";
-    } else {
-      document.getElementById("header").style.top = "-88px";
-    }
+    header.style.top = "-" + header.offsetHeight + "px";
   }
   prevScrollpos = currentScrollPos;
 }
