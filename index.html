@@ -1,109 +1,32 @@
 <!doctype html>
+<!-- Geliştirme: "npm run dev". Canlı site: "npm run build" → docs/ — GitHub Pages’te klasör /docs seç. -->
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Yaşar Yiğit Turan — statistics student at Hacettepe University focused on machine learning, deep learning, and AI projects."
+    />
+    <meta property="og:title" content="Yaşar Yiğit Turan" />
+    <meta
+      property="og:description"
+      content="Statistics student at Hacettepe University focused on machine learning, deep learning, and AI projects with practical business impact."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yyigitturan.github.io/" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yaşar Yiğit Turan" />
+    <meta
+      name="twitter:description"
+      content="Statistics student at Hacettepe University focused on machine learning, deep learning, and AI projects."
+    />
+    <link rel="manifest" href="/media/site.webmanifest" />
     <title>Yaşar Yiğit Turan</title>
-    <link href="css/portfolio.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
-    <link rel="manifest" href="media/site.webmanifest">
-</head>
-<body>
-<div class="page-wrap">
-    <header id="header">
-        <div class="container-narrow header-inner">
-            <a href="/" id="brand-logo">Yaşar Yiğit Turan</a>
-            <button class="navbar-toggler third-button" type="button" aria-label="Toggle navigation">
-                <div class="animated-icon3"><span></span><span></span><span></span></div>
-            </button>
-            <nav id="nav-desktop">
-                <ul>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="skills.html" class="nav-link">Skills</a></li>
-                    <li><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li><a href="resume.pdf" download="Yaşar_Yiğit_Turan_CV.pdf" class="btn-main"><i class="fas fa-cloud-download-alt"></i>CV</a></li>
-                </ul>
-            </nav>
-            <nav id="nav-mobile" class="sidenav close">
-                <ul>
-                    <li><a href="about.html" class="nav-link nav-link-m">About</a></li>
-                    <li><a href="projects.html" class="nav-link nav-link-m">Projects</a></li>
-                    <li><a href="skills.html" class="nav-link nav-link-m">Skills</a></li>
-                    <li><a href="blog.html" class="nav-link nav-link-m">Blog</a></li>
-                    <li><a href="contact.html" class="nav-link nav-link-m">Contact</a></li>
-                    <li><a href="resume.pdf" download="Yaşar_Yiğit_Turan_CV.pdf" class="btn-main">Download CV</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container-narrow">
-                <div class="hero-card">
-                    <p class="kicker">Personal Portfolio</p>
-                    <h1>Hi, I’m Yaşar Yiğit Turan.</h1>
-                    <p class="lead">I’m a statistics student at Hacettepe University focused on machine learning, deep learning, and AI projects with practical business impact.</p>
-                    <div class="stack">
-                        <a href="contact.html" class="btn-main">Get In Touch</a>
-                        <a href="projects.html" class="btn-subtle">View Projects</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="container-narrow">
-                <div class="section-head">
-                    <h2>Featured Work</h2>
-                </div>
-                <div class="grid-3">
-                    <article class="project-card">
-                        <h3>Sentiment Analysis: Amazon Kozmos Reviews</h3>
-                        <p class="lead">NLP preprocessing with NLTK, TF-IDF vectorization, then Logistic Regression and Random Forest classification.</p>
-                        <img src="img/word.png" alt="Sentiment analysis visualization">
-                        <a class="btn-subtle" target="_blank" href="https://www.kaggle.com/code/yaaryiitturan/sentiment-analysis-amazon-kozmos-reviews">View on Kaggle</a>
-                    </article>
-                    <article class="project-card">
-                        <h3>Credit Score Prediction Using ANN</h3>
-                        <p class="lead">Customer credit classification using ANN with SMOTE balancing, plus full preprocessing and feature engineering.</p>
-                        <div class="media-grid">
-                            <img src="img/ann1.png" alt="Credit score ANN visual 1">
-                            <img src="img/ann2.png" alt="Credit score ANN visual 2">
-                        </div>
-                        <a class="btn-subtle" target="_blank" href="https://www.kaggle.com/code/yaaryiitturan/credit-score-prediction-using-ann-smote">View on Kaggle</a>
-                    </article>
-                    <article class="project-card">
-                        <h3>Power BI: Global Superstore Report</h3>
-                        <p class="lead">Interactive BI dashboard with drillthrough, rich visual storytelling, and regional trend analysis.</p>
-                        <div class="media-grid">
-                            <img src="img/1.png" alt="Power BI report page 1">
-                            <img src="img/2.png" alt="Power BI report page 2">
-                        </div>
-                        <a class="btn-subtle" target="_blank" href="https://github.com/yyigitturan/Global-Superstore-PowerBI-Dashboard">View on GitHub</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container-narrow">
-            <div class="social-row">
-                <a title="Email" href="mailto:yigitturan19319@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
-                <a title="LinkedIn" href="https://www.linkedin.com/in/ya%C5%9Far-yi%C4%9Fit-turan-/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a title="GitHub" href="https://github.com/yyigitturan" target="_blank"><i class="fab fa-github"></i></a>
-                <a title="Kaggle" href="https://www.kaggle.com/yaaryiitturan" target="_blank"><i class="fab fa-kaggle"></i></a>
-                <a title="Medium" href="https://medium.com/@yasaryigitturan" target="_blank"><i class="fab fa-medium"></i></a>
-                <a title="X" href="https://x.com/yigitturan_" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2026 Yaşar Yiğit Turan. All rights reserved.</p>
-        </div>
-    </footer>
-</div>
-<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
-<script src="js/navbar.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

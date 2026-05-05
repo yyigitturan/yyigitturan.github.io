@@ -1,0 +1,22 @@
+GITHUB PAGES — SİTE BOŞ GÖRÜNÜYORSA (ÖNEMLİ)
+============================================
+
+Kök dizindeki "index.html" SADECE bilgisayarında "npm run dev" ile çalışır.
+GitHub, /src/main.jsx dosyasını derlemez; bu yüzden kökten yayın yaparsan sayfa BOŞ kalır.
+
+YAPMAN GEREKEN (ikisinden BİRİ):
+
+A) Branch + /docs klasörü (en kolay)
+   1. Terminal: npm install && npm run build
+   2. "docs" klasörünü commit + push et
+   3. GitHub → Settings → Pages → Build and deployment
+      Source: Deploy from a branch
+      Branch: main, Folder: /docs  (← /root SEÇME)
+
+B) GitHub Actions
+   1. Settings → Pages → Source: GitHub Actions
+   2. main’e push; workflow "docs" klasörünü yayınlar
+
+Yerelde tam siteyi görmek: npm run build && npm run preview
+
+Eski adresler (about.html, skills.html, …) artık tek sayfadaki bölümlere yönlendirir.
